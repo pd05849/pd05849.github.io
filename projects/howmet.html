@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automated billet measurement — Pol del Castillo</title>
+<meta name="description" content="Senior capstone for Howmet Aerospace: an automated linear-scale retrofit that measures aerospace billet to 0.0008 in for about $1,000.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 26 L14 16 L22 18 L27 8' stroke='%2300235A' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='26' r='3.5' fill='%2300235A'/%3E%3Ccircle cx='27' cy='8' r='3' fill='%238FB0E8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="wrap case">
+
+<header>
+  <a class="back" href="../index.html#hardware">&larr; Pol del Castillo</a>
+  <h1>Automated billet measurement for an aerospace cutting line</h1>
+  <p class="lede">A linear-scale retrofit for Howmet Aerospace that measures billet to
+    0.0008&nbsp;in for about $1,000 &mdash; replacing a handheld tape measure.</p>
+
+  <dl class="meta">
+    <div>
+      <dt>Role</dt>
+      <dd>Project Manager &mdash; 11-person team, three subgroups</dd>
+    </div>
+    <div>
+      <dt>Timeline</dt>
+      <dd>Jan &ndash; Apr 2025 (16 weeks)</dd>
+    </div>
+    <div>
+      <dt>Stack</dt>
+      <dd>Arduino Mega, FUYU FSL80 guide, NEMA 23 + encoder, HMI, SolidWorks</dd>
+    </div>
+    <div>
+      <dt>Presented</dt>
+      <dd>2025 GSU Student Research Symposium</dd>
+    </div>
+  </dl>
+</header>
+
+<figure class="media">
+  <div class="frame"><img src="../assets/img/howmet.jpg" alt="The linear-scale system installed on Howmet's production conveyor, gauge arm against an aerospace billet"></div>
+  <figcaption>The system installed on the production conveyor at Howmet &mdash; gauge arm against a billet</figcaption>
+</figure>
+
+<section>
+  <h2>The problem</h2>
+  <p>Howmet's saw operators measured aerospace billet with a <b>handheld tape measure</b>,
+    accurate to about 1/16&nbsp;in. Cuts came out underweight, and underweight aerospace
+    stock cannot be recovered into any other part number &mdash; it is scrap. The line had a
+    second failure mode: operators would advance the billet after a cut without raising the
+    contact plate, and the impact would break the stopper. A previous commercial scale
+    system had died exactly this way.</p>
+  <figure class="media">
+    <div class="frame"><img src="../assets/img/howmet-problem.jpg" alt="A billet advancing along the roller conveyor toward the measurement station"></div>
+    <figcaption>The failure mode: a billet advancing into a stopper that was never raised</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Approach</h2>
+  <p>The job was to automate the measurement <i>without replacing the saw</i>, inside 16
+    weeks and a $2,000 project budget. I ran the team from problem definition through
+    concept selection to a working prototype, and held the design to a real spec:
+    0.001&nbsp;in accuracy, 50&nbsp;in of travel, and robustness to the operator error that
+    had destroyed its predecessor.</p>
+  <ul>
+    <li>Costed and compared three drive architectures &mdash; belt, ball screw and track
+      actuator &mdash; and selected between them with a <b>QFD and weighted decision
+      matrix</b> rather than by preference. The screw system won on 42 points to 38 and
+      37, at roughly <b>$1,000</b> against <b>$10,000</b> for the belt system that was
+      marginally more repeatable.</li>
+    <li>Solved the impact problem mechanically: a <b>hinged-flap stopper</b> with rollers
+      and an extension arm that yields when a billet hits it, designed to a
+      <b>factor of safety of 1.15+</b> at the expected 150&nbsp;lbf impact.</li>
+    <li>Built the automation chain: a programmable <b>FUYU FSL80 linear guide</b> driven
+      by a NEMA 23 stepper with built-in encoder, Arduino control, an HMI for the
+      operator, limit switches for travel bounds, and a <b>VL53L0X time-of-flight
+      sensor</b> prototyped as an alternative measurement path.</li>
+    <li>Wrote the safety case &mdash; physical guards, emergency stop, grounding and
+      insulation &mdash; against the NSPE code of ethics.</li>
+  </ul>
+  <figure class="media">
+    <div class="frame"><img src="../assets/img/howmet-cad.jpg" alt="SolidWorks render of the complete linear-scale assembly with controller box and power supply"></div>
+    <figcaption>The full assembly in SolidWorks: rail, carriage, controller box and power supply</figcaption>
+  </figure>
+  <figure class="media">
+    <div class="frame"><img src="../assets/img/howmet-wiring.png" alt="Final wiring diagram of the control system"></div>
+    <figcaption>Final control wiring: Arduino, stepper driver, HMI, limit switches</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Results</h2>
+  <div class="metrics">
+    <div class="metric">
+      <div class="v">0.0008 in</div>
+      <div class="l">measurement precision achieved</div>
+    </div>
+    <div class="metric">
+      <div class="v">~$1,000</div>
+      <div class="l">system cost &mdash; vs $10,000 for the belt alternative</div>
+    </div>
+    <div class="metric">
+      <div class="v">1.15+</div>
+      <div class="l">stopper factor of safety at 150 lbf impact</div>
+    </div>
+    <div class="metric">
+      <div class="v">16 weeks</div>
+      <div class="l">problem statement to working prototype</div>
+    </div>
+  </div>
+  <p>The prototype measured and positioned against real billet on Howmet's line, and the
+    work was presented at the 2025 Georgia Southern Student Research Symposium.</p>
+  <figure class="media">
+    <div class="frame"><img src="../assets/img/howmet-testcut.jpg" alt="A test cut in progress with the gauge arm referenced against the billet"></div>
+    <figcaption>Test cut: the gauge arm referencing the billet as the saw runs</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>What stuck</h2>
+  <p>The cheaper design won. Being able to show <i>why</i> on a decision matrix, rather
+    than argue for it, is what made that an engineering decision instead of an opinion.
+    And the most valuable engineering on this project wasn't the electronics &mdash; it was
+    designing for the operator who will never read the manual.</p>
+</section>
+
+<footer>
+  <p><a class="back" href="../index.html#hardware">&larr; Back to all projects</a></p>
+  <p style="margin-top:16px">
+    <a href="mailto:polca2003@gmail.com">polca2003@gmail.com</a> &nbsp;&middot;&nbsp;
+    <a href="https://github.com/pd05849">github.com/pd05849</a> &nbsp;&middot;&nbsp;
+    <a href="https://www.linkedin.com/in/pol-del-castillo">linkedin.com/in/pol-del-castillo</a>
+  </p>
+</footer>
+
+</div>
+
+</body>
+</html>

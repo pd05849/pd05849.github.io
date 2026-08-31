@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pol del Castillo</title>
+<meta name="description" content="Pol del Castillo — M.S. Mechanical Engineering candidate at RPI working on robot learning: VLAs, imitation learning, and the controls, firmware and sensing that make robots work in the real world.">
+<meta property="og:title" content="Pol del Castillo">
+<meta property="og:description" content="Robot learning, controls and embedded hardware — M.S. Mechanical Engineering candidate at RPI.">
+<meta property="og:type" content="website">
+<!-- Once the site is live, add a social preview image (1200x630) to assets/img/ and uncomment:
+<meta property="og:image" content="https://pd05849.github.io/assets/img/og.png"> -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 26 L14 16 L22 18 L27 8' stroke='%2300235A' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='6' cy='26' r='3.5' fill='%2300235A'/%3E%3Ccircle cx='27' cy='8' r='3' fill='%238FB0E8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="bar">
+    <a class="wordmark" href="#top">Pol del Castillo</a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#robot-learning">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#athletics">Athletics</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-grid">
+    <div>
+      <p class="kicker">Robot learning · Controls · Embedded systems</p>
+      <h1>Pol del Castillo</h1>
+      <p class="lede">I build robots that learn, and the <em>embedded hardware</em> that lets them sense the world.</p>
+      <div class="btns">
+        <a class="btn solid" href="assets/Pol_del_Castillo_Resume.pdf" download>Download resume</a>
+        <a class="btn" href="mailto:polca2003@gmail.com">Contact me</a>
+      </div>
+      <div class="links">
+        <a href="https://github.com/pd05849">GitHub</a>
+        <a href="https://www.linkedin.com/in/pol-del-castillo">LinkedIn</a>
+        <a href="https://pd05849.github.io/MS-Thesis">Thesis</a>
+      </div>
+    </div>
+    <div class="portrait"><img src="assets/img/headshot.jpg" alt="Pol del Castillo"></div>
+  </div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section class="about reveal" id="about">
+  <h2>About</h2>
+  <p>M.S. Mechanical Engineering candidate at <b>Rensselaer Polytechnic Institute</b>
+    (May 2027), researching robot learning in the <b>John Wen Research Group</b>.
+    Interested in making robot policies that let robots adapt, sense, and act in the real
+    world as well as learning the control techniques that make them safe and reliable,
+    while choosing the appropriate sensors and the firmware that makes it all work at
+    once. I am looking for robotics and controls engineering roles starting
+    <b>May 2027</b>, and open to internships before then. I get most excited about
+    building things that help people, <b>medical robotics</b> especially, but I am up
+    for any challenge.</p>
+  <div class="duo">
+    <div class="card">
+      <h3>Robot learning</h3>
+      <p>Training manipulation policies from human demonstrations: VLAs, diffusion
+        policies, flow matching, and the teleoperation and simulation infrastructure
+        that feeds them.</p>
+    </div>
+    <div class="card">
+      <h3>Controls, firmware &amp; sensing</h3>
+      <p>From strain-gauge bridges to BLE firmware on Nordic and ESP32 chips, to LQR
+        and adaptive control, to choosing the sensor, writing the firmware, and closing
+        the loop.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS =================
+     Each entry: thumbnail left, text right. To fill a thumb, replace the
+     placeholder span with an <img> or a muted looping <video>.           -->
+<section id="robot-learning">
+  <h2>Robot learning</h2>
+
+  <div class="entry reveal">
+    <div class="thumb"><span class="placeholder">GIF &mdash; OARbot<br>demonstration rollout</span></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>Master's thesis: teaching a mobile manipulator by learning from demonstrations</h3>
+        <span class="where">2026 &ndash; 2027</span>
+      </div>
+      <p class="role">Learning from Demonstration for VLA control of the OARbot</p>
+      <p>Can a robot learn a complex, multi-step task from human demonstrations alone,
+        without anyone writing the task down as code? I am fine-tuning
+        vision-language-action models on the <b>OARbot</b>, a <b>7-DOF Kinova arm</b> on
+        an omnidirectional mobile base, while running the whole arc from literature
+        review and task design through robot bring-up, demonstration collection,
+        fine-tuning and evaluation.</p>
+      <ul>
+        <li>Fine-tuning <b>NVIDIA GR00T</b> and benchmarking open VLA baselines
+          (<b>SmolVLA</b>, <b>&pi;0</b>) through Hugging Face <b>LeRobot</b>.</li>
+        <li>Bringing up the OARbot platform: ROS 2 interfaces to the arm and base,
+          teleoperation, and the demonstration-collection pipeline.</li>
+      </ul>
+      <div class="entry-links">
+        <a href="https://pd05849.github.io/MS-Thesis">Thesis site &nearr;</a>
+      </div>
+      <div class="tech"><span>PyTorch</span><span>GR00T</span><span>LeRobot</span><span>VLAs</span>
+        <span>imitation learning</span><span>ROS 2</span></div>
+    </div>
+  </div>
+
+  <div class="entry reveal">
+    <!-- A GIF of the real arm running a policy would be even better here -->
+    <div class="thumb"><img src="assets/img/so101-sim.jpg" alt="The SO-101 arm modelled in Isaac Sim, running real-time on an RTX 4060"></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>SO-101 arm: from 3D print to learned policy</h3>
+        <span class="where">2025 &ndash; present</span>
+      </div>
+      <p class="role">Center for Smart Convergent Manufacturing Systems, RPI</p>
+      <p>I 3D-printed and assembled a LeRobot SO-101 arm, collected demonstration data by
+        teleoperation, and trained several policy families on it &mdash; then built the
+        simulation side so training did not depend on the physical robot being free.</p>
+      <ul>
+        <li>Trained and compared <b>ACT</b> and <b>diffusion policy</b> on teleoperated
+          demonstrations of the same tasks.</li>
+        <li>Implemented a <b>flow-matching (CondOT)</b> policy predicting chunks of joint
+          angles from a wrist camera and joint state, integrated over <b>20 Euler steps</b>
+          at inference.</li>
+        <li>Modelled the arm from URDF in <b>Isaac Sim / Isaac Lab</b> and bridged simulation
+          to <b>ROS 2 Jazzy</b> across a Windows&ndash;WSL2 boundary over Fast DDS.</li>
+      </ul>
+      <div class="entry-links">
+        <a href="https://github.com/pd05849/lerobot-imitation-learning">Code &nearr;</a>
+        <!-- <a href="projects/so101.html">Case study &rarr;</a> -->
+        <!-- <a href="https://youtu.be/VIDEO">Video &nearr;</a> -->
+      </div>
+      <div class="tech"><span>PyTorch</span><span>Isaac Sim</span><span>ROS 2</span><span>LeRobot</span>
+        <span>flow matching</span><span>diffusion policy</span><span>ACT</span><span>URDF</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="hardware">
+  <h2>Hardware &amp; embedded</h2>
+
+  <div class="entry reveal">
+    <div class="thumb"><span class="placeholder">Photo &mdash; sensing board<br>on the bench</span></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>ViaDose (start-up)</h3>
+        <span class="where">2026 &ndash; present</span>
+      </div>
+      <p class="role">R&amp;D Hardware Engineer: sensing, firmware, energy</p>
+      <p>A connected medical-adherence device. I own the sensing architecture, the
+        microcontroller firmware and the battery model. <i>ViaDose is currently in
+        stealth mode, so details here are deliberately light.</i></p>
+      <ul>
+        <li>Built the load-cell sensing chain end to end: strain-gauge bridge and
+          calibration.</li>
+        <li>Wrote the dose-detection algorithm: median and EMA filtering, <b>CUSUM</b>
+          change detection and an event state machine, with accelerometer-gated sampling
+          so the bridge is only excited when a reading matters.</li>
+        <li>Brought up firmware on MCU families, integrating load-cell front ends
+          and IMUs over I&sup2;C on breadboard and custom PCB, streaming events over
+          <b>BLE</b>.</li>
+        <li>Own the energy architecture for a device whose goal is to run for <b>years on
+          a coin cell</b>, and the connectivity roadmap: <b>NFC</b> pairing and
+          <b>LTE-M</b> for the next revision.</li>
+      </ul>
+      <div class="tech"><span>C/C++</span><span>Nordic nRF</span><span>Zephyr</span><span>BLE</span>
+        <span>I2C</span><span>load cells</span><span>24-bit ADC</span><span>low-power design</span>
+        <span>PCB bring-up</span></div>
+    </div>
+  </div>
+
+  <div class="entry reveal">
+    <div class="thumb"><img src="assets/img/howmet.jpg" alt="Linear-scale measuring system installed on Howmet's production conveyor, gauge arm against an aerospace billet"></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>Precision automated linear scaling system</h3>
+        <span class="where">2025</span>
+      </div>
+      <p class="role">Project Manager: senior capstone for Howmet Aerospace</p>
+      <p>Howmet's saw operators were measuring aerospace billet with a <b>handheld tape
+        measure</b>, accurate to about 1/16 in. Cuts came out underweight and the material
+        could not be recovered. My team's job was to automate the measurement without
+        replacing the saw.</p>
+      <ul>
+        <li>Led an <b>11-person team</b> across three subgroups as project manager, from
+          problem definition through concept selection and prototype.</li>
+        <li>Held the design to a real spec: <b>0.001 in</b> accuracy, <b>50 in</b> of
+          travel, under <b>$1,500</b>, and robust to operator error.</li>
+        <li>Selected between belt, ball-screw and track architectures with a <b>QFD and
+          weighted decision matrix:</b> the screw system won at roughly <b>$1,000</b>
+          against <b>$10,000</b> for the marginally more repeatable belt.</li>
+        <li>Built a working prototype: programmable <b>FUYU linear guide</b>, NEMA 23
+          stepper, Arduino control, an HMI, and a VL53L0X time-of-flight alternative path.</li>
+      </ul>
+      <div class="entry-links">
+        <a href="projects/howmet.html">Case study &rarr;</a>
+      </div>
+      <div class="tech"><span>Arduino</span><span>stepper control</span><span>linear motion</span>
+        <span>encoders</span><span>SolidWorks</span><span>QFD</span><span>GD&amp;T</span>
+        <span>project management</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="controls">
+  <h2>Controls &amp; kinematics</h2>
+
+  <div class="entry reveal">
+    <div class="thumb portrait"><video src="assets/img/drawbot.mp4" autoplay muted loop playsinline></video></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>DRAWbot: an arm that draws what you sketch</h3>
+        <span class="where">2025</span>
+      </div>
+      <p class="role">Team of 4: Robotics course, RPI</p>
+      <p>We made a 5-DOF DOFBOT arm reproduce Microsoft Paint sketches on paper. An image
+        goes in; <b>OpenCV</b> extracts and downsamples its contours; inverse kinematics
+        turns every contour point into joint angles; and a <b>spring-loaded Sharpie
+        end-effector</b> we designed and 3D-printed keeps the pen on the page while the arm
+        draws.</p>
+      <ul>
+        <li>Redefined the arm's <b>product-of-exponentials</b> model with a new tool frame
+          for the pen, and solved IK per contour point with a <b>Jacobian-inverse iterative
+          method</b>.</li>
+        <li>Constrained the base joint by arctangent per point so the pen stays
+          perpendicular to the drawing plane across the whole page.</li>
+        <li>The spring-loaded, notched adapter free-floats the pen, keeping contact
+          through surface variation without dragging friction.</li>
+      </ul>
+      <div class="tech"><span>Python</span><span>OpenCV</span><span>NumPy</span>
+        <span>PoE kinematics</span><span>Jacobian IK</span><span>3D printing</span></div>
+    </div>
+  </div>
+
+  <div class="entry reveal">
+    <div class="thumb"><video src="assets/img/acrobot.mp4" autoplay muted loop playsinline></video></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>Acrobot swing-up and balance: RL + adaptive LQR</h3>
+        <span class="where">2026</span>
+      </div>
+      <p class="role">Adaptive Systems &amp; Reinforcement Learning, RPI</p>
+      <p>The acrobot is a two-link pendulum actuated only at the elbow, an
+        underactuated benchmark that is easy to state and hard to balance. Our system swings
+        it up with a <b>DQN</b> policy, then hands off to my <b>adaptive LQR</b> to catch
+        and hold it upright.</p>
+      <ul>
+        <li>Built the stabilizer as a <b>certainty-equivalence adaptive LQR</b> in MATLAB:
+          four parallel <b>RLS estimators</b> identify the discrete [A,&nbsp;B] model online
+          (forgetting factor 0.98), and the LQR gain is re-solved from the estimates at
+          every step.</li>
+        <li>Stabilizes the <b>full nonlinear dynamics</b> from perturbed initial conditions
+          under a <b>&plusmn;10 N&middot;m</b> torque limit.</li>
+        <li>Mapped the basin of attraction with a <b>400-simulation Monte Carlo</b> sweep
+          over initial angle and velocity perturbations.</li>
+      </ul>
+      <div class="tech"><span>MATLAB</span><span>LQR</span><span>adaptive control</span>
+        <span>RLS</span><span>DQN</span><span>Monte Carlo</span><span>ode45</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="computing">
+  <h2>Scientific computing</h2>
+
+  <div class="entry reveal">
+    <div class="thumb"><img src="assets/img/wildfire.png" alt="Vorticity contours of cross flow through a staggered array of cylinders, computed with the immersed boundary method"></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>Wildfire spread simulator</h3>
+        <span class="where">2024 &ndash; 2025</span>
+      </div>
+      <p class="role">Fire and Energy Laboratory, Georgia Southern</p>
+      <p>How fast a wildfire moves depends on how wind flows through vegetation, which
+        depends on drag. I implemented a finite-volume <b>immersed boundary method</b> on a
+        Julia Navier&ndash;Stokes solver to compute drag coefficients for rigid and flexible
+        vegetation, simulating cylinder arrays at the Reynolds numbers wind actually reaches
+        around pine needles (<b>Re &asymp; 140&ndash;307</b>). The method validated against
+        five published studies (<b>C&#8339; 1.29</b> vs 1.25&ndash;1.34), and its outputs feed
+        fire-spread models like <b>WFDS</b>. Presented at the 2024 GSU Student Research
+        Symposium.</p>
+      <div class="tech"><span>Julia</span><span>CFD</span><span>Navier-Stokes</span>
+        <span>immersed boundary</span><span>finite volume</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-group">
+      <h3>Robot learning</h3>
+      <div class="tech"><span>PyTorch</span><span>LeRobot</span><span>GR00T</span><span>VLAs</span>
+        <span>imitation learning</span><span>flow matching</span><span>diffusion policies</span>
+        <span>ACT</span><span>Isaac Sim / Isaac Lab</span><span>ROS 2</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Embedded</h3>
+      <div class="tech"><span>C/C++</span><span>Nordic nRF</span><span>Zephyr</span>
+        <span>PlatformIO</span><span>Arduino</span><span>I2C</span><span>SPI</span><span>UART</span>
+        <span>SWD</span><span>BLE</span><span>hardware bring-up</span><span>low-power design</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Hardware</h3>
+      <div class="tech"><span>load cells</span><span>strain gauges</span><span>24-bit ADCs</span>
+        <span>IMUs</span><span>stepper &amp; servo control</span><span>encoders</span>
+        <span>PCB bring-up</span><span>coin-cell energy budgeting</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Controls</h3>
+      <div class="tech"><span>LQR</span><span>adaptive control</span><span>RLS system ID</span>
+        <span>MRAC</span><span>inverse kinematics</span><span>DQN / Q-learning</span>
+        <span>Monte Carlo validation</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Mechanical</h3>
+      <div class="tech"><span>SolidWorks</span><span>AutoCAD</span><span>GD&amp;T</span>
+        <span>3D printing</span><span>rapid prototyping</span><span>FEA</span><span>DFM</span></div>
+    </div>
+    <div class="skill-group">
+      <h3>Computing</h3>
+      <div class="tech"><span>Python</span><span>Julia</span><span>MATLAB</span><span>SciML</span>
+        <span>CFD</span><span>Git</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="edu reveal">
+    <div>
+      <strong>Rensselaer Polytechnic Institute</strong>
+      <div class="sub">M.S. Mechanical Engineering &mdash; John Wen Research Group</div>
+    </div>
+    <span class="d">Aug 2025 &ndash; May 2027</span>
+  </div>
+  <div class="edu reveal">
+    <div>
+      <strong>Georgia Southern University</strong>
+      <div class="sub">B.S. Mechanical Engineering &mdash; Magna Cum Laude, Dean's List</div>
+    </div>
+    <span class="d">Aug 2021 &ndash; May 2025</span>
+  </div>
+</section>
+
+<!-- ================= ATHLETICS ================= -->
+<section id="athletics">
+  <h2>Athletics &amp; leadership</h2>
+  <div class="entry reveal">
+    <div class="thumb"><img src="assets/img/tennis.jpg" alt="The Georgia Southern men's tennis team celebrating in a huddle on court"></div>
+    <div class="entry-text">
+      <div class="ihead">
+        <h3>NCAA Division I tennis, team captain</h3>
+        <span class="where">2021 &ndash; 2025</span>
+      </div>
+      <p class="role">Georgia Southern men's tennis</p>
+      <p>Four years as a Division I student-athlete while carrying a full engineering course
+        load &mdash; 20+ hours of training a week. Led the team as captain to the 2024
+        <b>Sun Belt Regular Season Championship</b> and the program's first year-end national
+        ranking (<b>No. 66 of 264</b>). Named Georgia Southern
+        <b>Student-Athlete of the Year, 2023&ndash;24</b>.</p>
+      <div class="tech"><span>captaincy</span><span>discipline</span><span>time management</span>
+        <span>performing under pressure</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<footer id="contact">
+  <p>The fastest way to reach me is email!</p>
+  <div class="btns">
+    <a class="btn solid" href="mailto:polca2003@gmail.com">polca2003@gmail.com</a>
+    <a class="btn" href="assets/Pol_del_Castillo_Resume.pdf" download>Download resume</a>
+  </div>
+  <p style="margin-top:20px">
+    <a href="https://github.com/pd05849">github.com/pd05849</a> &nbsp;&middot;&nbsp;
+    <a href="https://www.linkedin.com/in/pol-del-castillo">linkedin.com/in/pol-del-castillo</a>
+  </p>
+  <p class="sig">Troy, New York</p>
+</footer>
+
+</div>
+
+<script>
+document.documentElement.classList.add('js');
+const io = new IntersectionObserver((es) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach(el => {
+  // anything already in the first viewport shows immediately; the rest reveal on scroll
+  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
+  else io.observe(el);
+});
+</script>
+
+</body>
+</html>
