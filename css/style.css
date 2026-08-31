@@ -96,6 +96,16 @@ h1{
 }
 .links a:hover{border-color:var(--accent); color:var(--accent);}
 
+/* contact popover — "Contact me" reveals the address with a copy button */
+.contact-pop{
+  margin-top:12px; display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  background:var(--panel); border:1px solid var(--rule); border-radius:8px;
+  padding:10px 14px; box-shadow:var(--shadow); width:fit-content;
+  font-family:"IBM Plex Mono",monospace; font-size:13.5px;
+}
+.contact-pop .addr{color:var(--ink); user-select:all;}
+.btn.tiny{padding:5px 10px; font-size:11.5px;}
+
 /* portrait — swap the placeholder for <img src="assets/img/headshot.jpg" alt="Pol del Castillo"> */
 .portrait{
   width:210px; aspect-ratio:1/1; border-radius:16px; overflow:hidden;
