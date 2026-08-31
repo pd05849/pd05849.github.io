@@ -40,15 +40,10 @@
     <div>
       <p class="kicker">Robot learning · Controls · Embedded systems</p>
       <h1>Pol del Castillo</h1>
-      <p class="lede">I build robots that learn, and the <em>embedded hardware</em> that lets them sense the world.</p>
+      <p class="lede">I program robots that learn and the <em>embedded hardware</em> that lets them sense the world.</p>
       <div class="btns">
         <a class="btn solid" href="assets/Pol_del_Castillo_Resume.pdf" download>Download resume</a>
-        <button class="btn" id="contact-toggle" type="button">Contact me</button>
-      </div>
-      <div class="contact-pop" id="contact-pop" hidden>
-        <span class="addr">polca2003@gmail.com</span>
-        <button class="btn tiny" id="contact-copy" type="button">Copy</button>
-        <a class="btn tiny" href="mailto:polca2003@gmail.com">Open mail app</a>
+        <a class="btn" href="#contact">Contact me</a>
       </div>
       <div class="links">
         <a href="https://github.com/pd05849">GitHub</a>
@@ -123,8 +118,7 @@
   </div>
 
   <div class="entry reveal">
-    <!-- A GIF of the real arm running a policy would be even better here -->
-    <div class="thumb"><img src="assets/img/so101-sim.jpg" alt="The SO-101 arm modelled in Isaac Sim, running real-time on an RTX 4060"></div>
+    <div class="thumb"><video src="assets/img/so101.mp4" autoplay muted loop playsinline></video></div>
     <div class="entry-text">
       <div class="ihead">
         <h3>SO-101 arm: from 3D print to learned policy</h3>
@@ -158,7 +152,7 @@
   <h2>Hardware &amp; embedded</h2>
 
   <div class="entry reveal">
-    <div class="thumb"><img src="assets/img/viadose-logo.png" alt="ViaDose logomark"></div>
+    <div class="thumb"><img src="assets/img/viadose-logo.jpg" alt="ViaDose logomark"></div>
     <div class="entry-text">
       <div class="ihead">
         <h3>ViaDose (start-up)</h3>
@@ -412,27 +406,6 @@ document.querySelectorAll('.reveal').forEach(el => {
   else io.observe(el);
 });
 
-// "Contact me" popover — mailto alone fails silently on machines with no mail app
-const ct = document.getElementById('contact-toggle');
-const cp = document.getElementById('contact-pop');
-if (ct && cp) {
-  ct.addEventListener('click', () => { cp.hidden = !cp.hidden; });
-  const cc = document.getElementById('contact-copy');
-  cc.addEventListener('click', async () => {
-    const addr = 'polca2003@gmail.com';
-    let ok = false;
-    try { await navigator.clipboard.writeText(addr); ok = true; }
-    catch (e) {
-      try {
-        const t = document.createElement('textarea');
-        t.value = addr; document.body.appendChild(t); t.select();
-        ok = document.execCommand('copy'); t.remove();
-      } catch (e2) {}
-    }
-    cc.textContent = ok ? 'Copied ✓' : 'Select & copy';
-    setTimeout(() => { cc.textContent = 'Copy'; }, 2500);
-  });
-}
 </script>
 
 </body>
