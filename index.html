@@ -405,6 +405,8 @@ document.querySelectorAll('.reveal').forEach(el => {
   if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('in');
   else io.observe(el);
 });
+// failsafe: never leave content invisible if the observer never fires
+setTimeout(() => document.querySelectorAll('.reveal:not(.in)').forEach(el => el.classList.add('in')), 1500);
 
 </script>
 
